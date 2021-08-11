@@ -3,7 +3,6 @@ import "./User.css"
 
 
 const User = ({ user }) => {
-  console.log(user)
   return (
     <div>
       <Card 

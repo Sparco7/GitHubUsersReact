@@ -16,7 +16,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.state.names.map((name, i) => {
-      return this.FetchUser(name)
+      return this.FetchUser(name);
     });
   }
 
@@ -27,7 +27,7 @@ class App extends React.Component {
         this.setState({ users: [response.data, ...this.state.users] });
       })
       .catch((err) => console.log("err", err));
-  }
+  };
 
   handleUpdateState = (e) => {
     const newState = e.target.value;
@@ -37,24 +37,29 @@ class App extends React.Component {
   addUser = () => {
     const user = this.state.inputUser;
 
-    this.FetchUser(user)    
+    this.FetchUser(user);
 
     this.setState({ inputUser: "" });
   };
 
   render() {
     return (
-      <div>
-        <div>
-          <InputForm
-            handleUpdateState={this.handleUpdateState}
-            addUser={this.addUser}
-            inputUser={this.state.inputUser}
-          />
+      <div className="container app-container">
+        <div className="row">
+          <div className="col">
+            <h1>GitHub Users</h1>
+            <div>
+              <InputForm
+                handleUpdateState={this.handleUpdateState}
+                addUser={this.addUser}
+                inputUser={this.state.inputUser}
+              />
+            </div>
+            {this.state.users.map((user, i) => {
+              return <User user={user} key={i} />;
+            })}
+          </div>
         </div>
-        {this.state.users.map((user, i) => {
-          return <User user={user} key={i} />;
-        })}
       </div>
     );
   }
