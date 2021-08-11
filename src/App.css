@@ -1,9 +1,19 @@
 .app-container {
   text-align: center;
+  background-color: rgb(228, 228, 228);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
 }
 
 .hl-row {
   text-align: center;
+}
+
+h1 {
+  margin: 20px auto;
 }
 
 .cards-container {

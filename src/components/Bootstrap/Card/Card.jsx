@@ -18,10 +18,10 @@ export default function Card(props) {
               <i class="fas fa-arrow-circle-left"></i> Following:{" "}
               {props.following}
             </p>
-            <p>Created at: {props.created_at}</p>
+            <p><i class="fas fa-calendar-week"></i> Created at: {props.created_at}</p>
           </p>
           <a href={props.url} target="_blank" className="btn btn-primary">
-            Go to repository
+            User's GitHub
           </a>
         </div>
       </div>

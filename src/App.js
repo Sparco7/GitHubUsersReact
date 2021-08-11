@@ -52,11 +52,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="container app-container">
-        <h1 className="row hl-row">
+        <div className="row hl-row">
           <div className="col">
-            GitHub <i class="fab fa-github"></i> Users
+            <h1>
+              GitHub <i class="fab fa-github"></i> Users
+            </h1>
           </div>
-        </h1>
+        </div>
 
         <div className="row input-container">
           <div className="col input-col">
