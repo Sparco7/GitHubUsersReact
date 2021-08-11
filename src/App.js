@@ -8,7 +8,14 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      names: ["Sparco7", "gagishmagi", "ShaniBel", "leib-ran", "shaharbest"],
+      names: [
+        "Sparco7",
+        "gagishmagi",
+        "ShaniBel",
+        "leib-ran",
+        "shaharbest",
+        "Fareska",
+      ],
       users: [],
       inputUser: "",
     };
@@ -45,30 +52,25 @@ class App extends React.Component {
   render() {
     return (
       <div className="container app-container">
-        <div className="row">
+        <h1 className="row hl-row">
           <div className="col">
-            <h1>
-              GitHub <i class="fab fa-github"></i> Users
-            </h1>
-
-            <div className="row input-container">
-              <div className="col">
-                <InputForm
-                  handleUpdateState={this.handleUpdateState}
-                  addUser={this.addUser}
-                  inputUser={this.state.inputUser}
-                />
-              </div>
-            </div>
-
-            {this.state.users.map((user, i) => {
-              return (
-                <div>
-                  <User user={user} key={i} />;
-                </div>
-              );
-            })}
+            GitHub <i class="fab fa-github"></i> Users
           </div>
+        </h1>
+
+        <div className="row input-container">
+          <div className="col input-col">
+            <InputForm
+              handleUpdateState={this.handleUpdateState}
+              addUser={this.addUser}
+              inputUser={this.state.inputUser}
+            />
+          </div>
+        </div>
+        <div className="row">
+          {this.state.users.map((user, i) => {
+            return <User user={user} key={i} />;
+          })}
         </div>
       </div>
     );
