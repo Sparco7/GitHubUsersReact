@@ -47,16 +47,26 @@ class App extends React.Component {
       <div className="container app-container">
         <div className="row">
           <div className="col">
-            <h1>GitHub Users</h1>
-            <div>
-              <InputForm
-                handleUpdateState={this.handleUpdateState}
-                addUser={this.addUser}
-                inputUser={this.state.inputUser}
-              />
+            <h1>
+              GitHub <i class="fab fa-github"></i> Users
+            </h1>
+
+            <div className="row input-container">
+              <div className="col">
+                <InputForm
+                  handleUpdateState={this.handleUpdateState}
+                  addUser={this.addUser}
+                  inputUser={this.state.inputUser}
+                />
+              </div>
             </div>
+
             {this.state.users.map((user, i) => {
-              return <User user={user} key={i} />;
+              return (
+                <div>
+                  <User user={user} key={i} />;
+                </div>
+              );
             })}
           </div>
         </div>
